@@ -6,6 +6,8 @@ let chart;
 function init() {
   getForecast();
 
+  getLocation();
+
   document.getElementById("place").addEventListener("keyup", (e) => {
     if (e.key == "Enter") {
       place = e.target.value;
@@ -15,8 +17,7 @@ function init() {
   });
 
   document.getElementById("getPlace").addEventListener("click", (e) => {
-    let data = getLocation();
-    console.log(data);
+   getLocation();
   });
 }
 
@@ -55,8 +56,6 @@ const getForecast = async () => {
     const response = await fetch(url, options);
     const result = await response.json();
     foreCast = result;
-
-    console.log(result);
 
     createDashboard(foreCast);
     createChart();
