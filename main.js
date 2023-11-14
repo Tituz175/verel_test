@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", init);
 let data;
 let foreCast;
-let place = "53.1,-0.13";
+let place;
 let chart;
 function init() {
   getForecast();
